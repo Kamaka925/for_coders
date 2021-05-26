@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ByCoders</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+    <div class="home">
+        <div class="container">
+            <div class="table-container">
+                <table class="content-table">
+                    <thead>
+                    <tr>
+                        <th>Loja</th>
+                        <th>Representante</th>
+                        <th>Tipo da transação</th>
+                        <th>Cartão utilizado na transação</th>
+                        <th>CPF do beneficiário</th>
+                        <th>Valor da movimentação</th>
+                        <th>Data da ocorrência</th>
+                        <th>Hora UTC-3</th>
+                        <th>Total de Saldo em Conta</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for c in dados %}
+                        <tr>
+                            <td>{{ c.loja }}</td>
+                            <td>{{ c.dono }}   </td>
+                            <td>{{ c.tipo }}</td>
+                            <td>{{ c.cartao }}</td>
+                            <td>{{ c.cpf }}</td>
+                            <td>{{ c.valor }}</td>
+                            <td>{{ c.data }}</td>
+                            <td>{{ c.hora }}</td>
+                            <td>{{ c.total }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'cargar_arquivo' %}">Importar Dados</a>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

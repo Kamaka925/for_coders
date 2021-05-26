@@ -1,0 +1,7 @@
+Django==3.2.3
+promptlib==1.0.0
+psycopg2==2.8.5
+public==2018.11.20
+PyMsgBox==1.0.9
+request==2018.11.20
+requests==2.20.0
