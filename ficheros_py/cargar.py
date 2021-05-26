@@ -31,7 +31,7 @@ class CARGAR:
         operacoes = []
         for x in file:
             tipo = dic["descricao"][int(x[0]) - 1]
-            data = x[1:9]
+            data = (datetime.strptime(x[1:9],"%Y%m%d")).strftime("%Y:%m:%d")
             valor = int(x[9:19]) / 100
             if dic["natureza"][int(x[0]) - 1] == "Entrada":
                 total += int(int(x[9:19]) / 100)
@@ -39,7 +39,7 @@ class CARGAR:
                 total -= int(int(x[9:19]) / 100)
             cpf = x[19:30]
             cartao = x[30:42]
-            hora = x[42:48]
+            hora = (datetime.strptime(x[42:48],"%H%M%S")).strftime("%H:%M:%S")
             dono = x[48:61]
             loja = x[61:81]
             operacoes.append(OPERACAO(loja, dono, tipo, cartao, cpf, valor, data, hora, total))
